@@ -22,3 +22,5 @@ export const App = () => {
     </Router>
   );
 };
+
+export type UserData = { token: string; username: string };

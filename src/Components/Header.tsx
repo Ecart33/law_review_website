@@ -2,9 +2,18 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  NavDropdown
+} from 'react-bootstrap';
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+import { UserData } from './App';
 
 export const Header = () => (
   <>
@@ -25,6 +34,20 @@ export const Header = () => (
           <Button variant='outline-success'>Search</Button>
         </Form>
       </Navbar.Collapse>
+      <Nav>
+        <StyledDrop title='Login' id='basic-nav-dropdown'>
+          <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
+          <NavDropdown.Item href='#action/3.2'>Another action</NavDropdown.Item>
+          <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href='#action/3.4'>Separated link</NavDropdown.Item>
+        </StyledDrop>
+      </Nav>
     </Navbar>
   </>
 );
+
+const StyledDrop = styled(NavDropdown)`
+  padding: 5px;
+  padding-left: 10px;
+`;
